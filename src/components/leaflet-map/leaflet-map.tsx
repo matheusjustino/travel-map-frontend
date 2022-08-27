@@ -9,7 +9,6 @@ import {
 	Popup,
 	useMapEvents,
 	useMapEvent,
-	MapConsumer,
 } from "react-leaflet";
 import { FaStar } from "react-icons/fa";
 import { MdLocationPin } from "react-icons/md";
@@ -83,10 +82,6 @@ const LeafletMap: React.FC = memo(() => {
 	};
 
 	useEffect(() => {
-		(async () => {
-			delete L.Icon.Default.prototype._getIconUrl;
-		})();
-
 		(() => {
 			setIsLoading(true);
 
