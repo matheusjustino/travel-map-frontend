@@ -23,7 +23,7 @@ export const ToastProvider: React.FC<ToastProviderProps> = ({ children }) => {
 		type: "success" | "warning" | "info" | "error"
 	) => {
 		toast(message, {
-			position: "top-right",
+			position: "top-center",
 			autoClose: 3000,
 			hideProgressBar: false,
 			closeOnClick: true,

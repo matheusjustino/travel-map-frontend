@@ -8,6 +8,7 @@ import { useForm } from "../../hooks/user-form.hook";
 
 // CONTEXTS
 import { useAuth } from "../../contexts/auth.context";
+import { useToast } from "../../contexts/toast.context";
 
 interface RegisterProps {
 	setShowRegisterModal: (e?: any) => void;
@@ -15,6 +16,7 @@ interface RegisterProps {
 
 const Register: React.FC<RegisterProps> = ({ setShowRegisterModal }) => {
 	const { handleRegister } = useAuth();
+	const { notify } = useToast();
 	const [form, handleForm] = useForm({
 		userName: "",
 		email: "",
@@ -27,6 +29,15 @@ const Register: React.FC<RegisterProps> = ({ setShowRegisterModal }) => {
 
 	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
+
+		if (
+			!form.userName.length ||
+			!form.email.length ||
+			!form.password.length
+		) {
+			notify("Preencha todos os campos", "warning");
+			return;
+		}
 
 		handleRegister(form, handleSetShowRegisterModal);
 	};

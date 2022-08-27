@@ -8,6 +8,7 @@ import { useForm } from "../../hooks/user-form.hook";
 
 // CONTEXTS
 import { useAuth } from "../../contexts/auth.context";
+import { useToast } from "../../contexts/toast.context";
 
 interface LoginProps {
 	setShowLoginModal: (e?: any) => void;
@@ -15,9 +16,10 @@ interface LoginProps {
 
 const Login: React.FC<LoginProps> = ({ setShowLoginModal }) => {
 	const { handleLogin } = useAuth();
+	const { notify } = useToast();
 	const [form, handleForm] = useForm({
-		email: "matheusz_7@hotmail.com",
-		password: "1234",
+		email: "",
+		password: "",
 	});
 
 	const handleSetShowLoginModal = () => {
@@ -26,6 +28,11 @@ const Login: React.FC<LoginProps> = ({ setShowLoginModal }) => {
 
 	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
+
+		if (!form.email.length || !form.password.length) {
+			notify("Preencha todos os campos", "warning");
+			return;
+		}
 
 		handleLogin(form, handleSetShowLoginModal);
 	};

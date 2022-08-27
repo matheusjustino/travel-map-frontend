@@ -123,8 +123,6 @@ const LeafletMap: React.FC = memo(() => {
 	const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 
-		setIsLoading(true);
-
 		if (!isAuthenticated) {
 			notify(`Você não está logado`, "error");
 			return;
@@ -136,6 +134,13 @@ const LeafletMap: React.FC = memo(() => {
 			lat: newPlace[0],
 			long: newPlace[1],
 		};
+
+		if (!form.title || !form.description) {
+			notify(`Preencha todos os campos`, "warning");
+			return;
+		}
+
+		setIsLoading(true);
 
 		createPinFunc({
 			variables: data,
