@@ -1,0 +1,53 @@
+.register-container {
+	position: inherit;
+	width: 21.875rem;
+	height: 18.75rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	z-index: 9999;
+	background-color: white;
+	border-radius: 12px;
+	left: 40%;
+	top: 40%;
+	box-shadow: 5px 3px 10px black;
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: tomato;
+}
+
+.form {
+	height: 100%;
+	padding: 0 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.input-form {
+	border: none;
+	border-bottom: 1px solid gray;
+
+	&::placeholder {
+		font-size: 0.75rem;
+		color: rgb(199, 198, 198);
+	}
+}
+
+.button {
+	border: none;
+	margin: 5px 0;
+	padding: 5px;
+	border-radius: 5px;
+	color: white;
+	background-color: slateblue;
+	cursor: pointer;
+
+	&:hover {
+		background-color: rgb(68, 52, 170);
+	}
+}

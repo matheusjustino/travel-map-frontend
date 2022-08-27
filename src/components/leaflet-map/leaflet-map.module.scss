@@ -1,0 +1,90 @@
+.map-wrapper {
+	height: 100%;
+	width: 100%;
+	position: relative;
+}
+
+.card {
+	width: 15.625rem;
+	height: 15.625rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.label {
+	width: max-content;
+	color: tomato;
+	font-size: 0.8125rem;
+	border-bottom: 0.5px solid tomato;
+	margin: 3px 0;
+}
+
+.place {
+	margin: 3px 0 !important;
+}
+
+.description {
+	margin: 3px 0 !important;
+}
+
+.stars {
+	display: flex;
+	gap: 0.5rem;
+}
+
+.star {
+	color: gold;
+}
+
+.username {
+	font-size: 0.875rem;
+}
+
+.date {
+	font-size: 0.75rem;
+}
+
+.input-form {
+	border: none;
+	border-bottom: 1px solid gray;
+
+	&::placeholder {
+		font-size: 0.75rem;
+		color: rgb(199, 198, 198);
+	}
+}
+
+.submit-button {
+	border: none;
+	padding: 5px;
+	border-radius: 5px;
+	color: white;
+	background-color: tomato;
+}
+
+.button {
+	border: none;
+	margin: 1rem 1rem 0 0;
+	padding: 5px;
+	border-radius: 5px;
+	color: white;
+	z-index: 999;
+	width: 80px;
+	height: 30px;
+	position: inherit;
+	float: right;
+	cursor: pointer;
+}
+
+.logout {
+	background-color: tomato;
+}
+
+.login {
+	background-color: teal;
+}
+
+.register {
+	background-color: slateblue;
+}
