@@ -43,41 +43,43 @@ const Register: React.FC<RegisterProps> = ({ setShowRegisterModal }) => {
 	};
 
 	return (
-		<div className={styles["register-container"]}>
-			<div className={styles.logo}>
-				<MdLocationPin size={26} />
-				<h2>Pin</h2>
-			</div>
+		<div className={styles.wrapper}>
+			<div className={styles["register-container"]}>
+				<div className={styles.logo}>
+					<MdLocationPin size={26} />
+					<h2>Pin</h2>
+				</div>
 
-			<form onSubmit={handleSubmit} className={styles.form}>
-				<input
-					name="userName"
-					onChange={handleForm}
-					value={form.userName}
-					className={styles["input-form"]}
-					type="text"
-					placeholder="Nome de usuário"
-				/>
-				<input
-					name="email"
-					onChange={handleForm}
-					value={form.email}
-					className={styles["input-form"]}
-					type="email"
-					placeholder="Email"
-				/>
-				<input
-					name="password"
-					onChange={handleForm}
-					value={form.password}
-					className={styles["input-form"]}
-					type="password"
-					placeholder="Senha"
-				/>
-				<button className={styles.button} type="submit">
-					Criar conta
-				</button>
-			</form>
+				<form onSubmit={handleSubmit} className={styles.form}>
+					<input
+						name="userName"
+						onChange={handleForm}
+						value={form.userName}
+						className={styles["input-form"]}
+						type="text"
+						placeholder="Nome de usuário"
+					/>
+					<input
+						name="email"
+						onChange={handleForm}
+						value={form.email}
+						className={styles["input-form"]}
+						type="email"
+						placeholder="Email"
+					/>
+					<input
+						name="password"
+						onChange={handleForm}
+						value={form.password}
+						className={styles["input-form"]}
+						type="password"
+						placeholder="Senha"
+					/>
+					<button className={styles.button} type="submit">
+						Criar conta
+					</button>
+				</form>
+			</div>
 		</div>
 	);
 };

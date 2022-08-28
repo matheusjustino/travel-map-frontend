@@ -38,33 +38,35 @@ const Login: React.FC<LoginProps> = ({ setShowLoginModal }) => {
 	};
 
 	return (
-		<div className={styles["login-container"]}>
-			<div className={styles.logo}>
-				<MdLocationPin size={26} />
-				<h2>Pin</h2>
-			</div>
+		<div className={styles.wrapper}>
+			<div className={styles["login-container"]}>
+				<div className={styles.logo}>
+					<MdLocationPin size={26} />
+					<h2>Pin</h2>
+				</div>
 
-			<form className={styles.form} onSubmit={handleSubmit}>
-				<input
-					name="email"
-					onChange={handleForm}
-					value={form.email}
-					className={styles["input-form"]}
-					type="email"
-					placeholder="Email"
-				/>
-				<input
-					name="password"
-					onChange={handleForm}
-					value={form.password}
-					className={styles["input-form"]}
-					type="password"
-					placeholder="Senha"
-				/>
-				<button className={styles.button} type="submit">
-					Entrar
-				</button>
-			</form>
+				<form className={styles.form} onSubmit={handleSubmit}>
+					<input
+						name="email"
+						onChange={handleForm}
+						value={form.email}
+						className={styles["input-form"]}
+						type="email"
+						placeholder="Email"
+					/>
+					<input
+						name="password"
+						onChange={handleForm}
+						value={form.password}
+						className={styles["input-form"]}
+						type="password"
+						placeholder="Senha"
+					/>
+					<button className={styles.button} type="submit">
+						Entrar
+					</button>
+				</form>
+			</div>
 		</div>
 	);
 };
